@@ -1,0 +1,43 @@
+body {
+    width: 100vw;  /* ใช้ viewport width แทน 1000px เพื่อรองรับหลายขนาดจอ */
+    height: 100vh; /* ใช้ viewport height แทน 500px */
+    background-color: rgb(230, 226, 173);
+    background-image: url('imgs/bg.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; /* ป้องกันภาพเบี้ยว */
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+h1 {
+    color: darkblue;
+}
+
+.title-bar {
+    position: absolute;
+    top: 2vh;
+    right: 2vh;
+    height: 5vh;
+    width: 100%;  /* ปรับให้เต็มหน้าต่าง */
+    display: flex;
+    justify-content: flex-end;
+    background-color: #333;
+    padding: 10px;
+    -webkit-app-region: drag; /* ทำให้ลากได้ */
+}
+
+.title-bar button {
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin-left: 5px;
+    cursor: pointer;
+    -webkit-app-region: no-drag; /* ป้องกันปุ่มไม่ให้ลาก */
+}
+
+.title-bar button:hover {
+    background-color: #777;
+}
