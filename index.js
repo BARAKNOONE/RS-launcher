@@ -2,18 +2,18 @@ const { app, BrowserWindow, ipcMain, dialog, shell } = require('electron');
 const axios = require('axios');
 const path = require('path');
 
-const REPO_URL = "https://raw.githubusercontent.com/BARAKNOONE/RS-launcher/main/version.json"; // 🔹 เปลี่ยนเป็น URL ไฟล์ version.json
-const CURRENT_VERSION = app.getVersion(); // 🔹 ดึงเวอร์ชันของแอปปัจจุบัน
+const REPO_VERSION_URL = "https://raw.githubusercontent.com/BARAKNOONE/RS-launcher/main/version.json"; // URL ของ version.json
+const CURRENT_VERSION = "1.0.0"; // เวอร์ชันปัจจุบันของแอป
 
 let win;
 
 async function checkForUpdates() {
   try {
-    const response = await axios.get(REPO_URL);
+    const response = await axios.get(REPO_VERSION_URL);
     const latestVersion = response.data.latest;
     const downloadURL = response.data.download_url;
 
-    console.log(`🔍 Latest Version: ${latestVersion}, Current Version: ${CURRENT_VERSION}`);
+    console.log(`🔍 Latest Version: ${latestVersion}, Current Version: ${CURRENT_VERSION}`); // แสดงเวอร์ชันใน Console
 
     if (latestVersion !== CURRENT_VERSION) {
       console.log("🔔 มีอัปเดตใหม่!");
@@ -30,8 +30,8 @@ async function createWindow() {
   win = new BrowserWindow({
     width: 1000,
     height: 500,
-    resizable: false, // ❌ ป้องกันการปรับขนาด
-    movable: true, // ✅ สามารถลากได้
+    resizable: false,
+    movable: true,
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
@@ -40,25 +40,14 @@ async function createWindow() {
     frame: false
   });
 
+  // เปิด DevTools สำหรับตรวจสอบ Console
+  win.webContents.openDevTools();
+
   const updateURL = await checkForUpdates();
 
   if (updateURL) {
-    // 🔻 แสดงหน้าอัปเดตก่อน
     win.loadFile('update.html');
-
-    dialog.showMessageBox({
-      type: 'info',
-      title: 'มีเวอร์ชันใหม่!',
-      message: 'มีเวอร์ชันใหม่พร้อมให้ดาวน์โหลด คุณต้องการเปิดลิงก์ดาวน์โหลดหรือไม่?',
-      buttons: ['ดาวน์โหลดเลย', 'ภายหลัง']
-    }).then((result) => {
-      if (result.response === 0) {
-        shell.openExternal(updateURL); // 🔗 เปิดลิงก์ดาวน์โหลด
-      }
-      win.close();
-    });
   } else {
-    // ✅ โหลดหน้าแอปปกติ
     win.loadFile('index.html');
   }
 }
