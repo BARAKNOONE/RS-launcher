@@ -3,7 +3,7 @@ const axios = require('axios');
 const path = require('path');
 
 const REPO_VERSION_URL = "https://raw.githubusercontent.com/BARAKNOONE/RS-launcher/main/version.json"; // URL ของ version.json
-const CURRENT_VERSION = "1.0.0"; // เวอร์ชันปัจจุบันของแอป
+const CURRENT_VERSION = "0.0.1"; // เวอร์ชันปัจจุบันของแอป
 
 let win;
 
