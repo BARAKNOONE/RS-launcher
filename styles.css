@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Athiti:wght@200;300;400;500;600;700&family=Bayon&family=Covered+By+Your+Grace&family=IBM+Plex+Sans+Thai:wght@100;200;300;400;500;600;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sriracha&display=swap');
+
 body {
     width: 100vw;  /* ใช้ viewport width แทน 1000px เพื่อรองรับหลายขนาดจอ */
     height: 100vh; /* ใช้ viewport height แทน 500px */
@@ -9,6 +11,7 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
+   
 }
 
 h1 {
@@ -23,7 +26,7 @@ h1 {
     width: 100%;  /* ปรับให้เต็มหน้าต่าง */
     display: flex;
     justify-content: flex-end;
-    background-color: #333;
+    /*background-color: #333;*/
     padding: 10px;
     -webkit-app-region: drag; /* ทำให้ลากได้ */
 }
@@ -36,8 +39,192 @@ h1 {
     margin-left: 5px;
     cursor: pointer;
     -webkit-app-region: no-drag; /* ป้องกันปุ่มไม่ให้ลาก */
+
+    font-family: "Bayon", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 2vh;
 }
 
 .title-bar button:hover {
     background-color: #777;
+}
+
+
+.container{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 20% 55% 20%;
+    gap: 5%;
+}
+.headermenu{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+.lefthd{
+    width: 100%;
+    height: 65%;
+    display: grid;
+    grid-template-columns: 22% 70%;
+    gap: 5%;
+    align-self: center;
+    margin-left: 5vh;
+}
+.detail-header{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 40% 25% 25%;
+    gap: 3%;
+}
+.logo{
+    width: 100%;
+    height: 100%;
+    background-image: url(imgs/logo.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.nameserver{
+    width: 100%;
+    height: 100%;
+    font-family: "Bayon", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 6vh;
+    display: flex;
+    justify-content: start;
+    align-content: center;
+    background: linear-gradient(180deg, #DFBC49,#7D6515); /* ไล่สีทองไปส้ม */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* ทำให้สีพื้นหลังข้อความโปร่งใส */
+    text-align: center;
+}
+.status{
+    padding: 1vh;
+    width: 65%;
+    height: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 1vh;
+    background-color: #242424d0;
+    border-radius: 15px;
+}
+.statusserver{
+    width: 2vh;
+    height: 2vh;
+    background-color: #9DFF00;
+    border-radius: 15px;
+}
+.textonline{
+    color: white;
+    font-family: "Bayon", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 2vh;
+    letter-spacing: 0.2vh;
+}
+.onlineplayer{
+    color: white;
+    font-family: "Bayon", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 2vh;
+    letter-spacing: 0.2vh;
+    padding-left: 3vh;
+    padding-right: 3vh;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    background-color: #242424d0;
+    
+}
+.textplayer{
+    color: white;
+    font-family: "Bayon", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 2vh;
+    letter-spacing: 0.2vh;
+}
+.versionlauncher{
+    color: rgba(255, 255, 255, 0.904);
+    font-family: "Bayon", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 2vh;
+    letter-spacing: 0.2vh;
+    margin-top: 2vh;
+}
+.contant{
+    display: grid;
+    grid-template-columns: 30% 70%;
+    align-self: center;
+    justify-self: center;
+    width: 100%;
+    height: 100%;
+    background-color: #20202254;
+}
+.profile{
+    width: 80%;
+    height: 90%;
+    background-color: #20202254;
+    justify-self: center;
+    align-self: center;
+}
+.profileimgbox{
+    width: 100%;
+    height: 100%;
+    background-image: url(imgs/bg.png);
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.profilephoto{
+
+}
+.profilename{
+
+}
+.profileidentify{
+
+}
+.news{
+
+}
+.newsheder{
+
+}
+.newscontant{
+
+}
+.news-boxs{
+
+}
+.news-imgli{
+
+}
+.news-detail{
+
+}
+.news-detailherder{
+
+}
+.news-details{
+
+}
+.news-date{
+
+}
+.news-ddmmyy{
+
+}
+.news-time{
+
+}
+.startredm{
+
 }

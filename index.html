@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
   <title>My Electron App</title>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://code.jquery.com;">
+
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -9,7 +11,54 @@
     <button id="minimize">-</button>
     <button id="close">X</button>
   </div>
-  <h1>Hello World!</h1>
+
+  <div class="container">
+    <div class="headermenu">
+        <div class="lefthd">
+            <div class="logo"></div>
+            <div class="detail-header">
+                <div class="nameserver">REDSUN</div>
+                <div class="status">
+                    <div class="statusserver"></div>
+                    <div class="textonline">ONLINE</div>
+                    <div class="onlineplayer">200</div>
+                    <div class="textplayer">PLAYER</div>
+                </div>
+                <div class="versionlauncher">VERSION 5.5.5</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="contant">
+        <div class="profile">
+            <div class="profileimgbox">
+                <div class="profilephoto"></div>
+                <div class="profilename">BARAK SMOKE</div>
+                <div class="profileidentify">Steam:000000000000</div>
+            </div>
+        </div>
+
+        <div class="news">
+            <div class="newsheder">UPDATE DEVELOP TEAM</div>
+            <div class="newscontant">
+                <div class="news-boxs">
+                    <div class="news-imgli"></div>
+                    <div class="news-detail">
+                        <div class="news-detailherder"></div>
+                        <div class="news-details"></div>
+                    </div>
+                    <div class="news-date">
+                        <div class="news-ddmmyy">13 MARCH 2025</div>
+                        <div class="news-time">20:22</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="startredm">เข้าเซิฟเวอร์</div>
+  </div>
+  
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="scripts.js"></script>
